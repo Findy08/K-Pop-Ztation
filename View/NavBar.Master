@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NavBar.master.cs" Inherits="KpopZtation_GroupB.View.NavBar" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>KpopZtation Group B</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            padding: 20px;
+            background-color:navy;
+        }
+
+        .linkBtn {
+            margin-left: 10px;
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        h1{
+            color: white;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav>
+            <h1>KpopZtation Group B</h1>
+            <asp:LinkButton ID="homepageLink" runat="server" CssClass="linkBtn" OnClick="homepageLink_Click">Home</asp:LinkButton>
+            <asp:LinkButton ID="loginpageLink" runat="server" CssClass="linkBtn" OnClick="loginpageLink_Click">Login</asp:LinkButton>
+            <asp:LinkButton ID="registerpageLink" runat="server" CssClass="linkBtn" OnClick="registerpageLink_Click">Register</asp:LinkButton>
+            <asp:LinkButton ID="cartLink" runat="server" CssClass="linkBtn" OnClick="cartLink_Click">Cart</asp:LinkButton>
+            <asp:LinkButton ID="transactionLink" runat="server" CssClass="linkBtn" OnClick="transactionLink_Click">Transaction</asp:LinkButton>
+            <asp:LinkButton ID="updateProfileLink" runat="server" CssClass="linkBtn" OnClick="updateProfileLink_Click">Update Profile</asp:LinkButton>
+            <asp:LinkButton ID="logoutpageLink" runat="server" CssClass="linkBtn" OnClick="logoutpageLink_Click">Logout</asp:LinkButton>
+        </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="contentBody" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

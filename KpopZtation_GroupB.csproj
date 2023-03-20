@@ -114,9 +114,28 @@
       <DependentUpon>KpopZtationModel.edmx</DependentUpon>
       <LastGenOutput>KpopZtationModel.cs</LastGenOutput>
     </Content>
+    <Content Include="View\AlbumDetailPage.aspx" />
+    <Content Include="View\ArtistDetailPage.aspx" />
+    <Content Include="View\CartPage.aspx" />
+    <Content Include="View\HomePage.aspx" />
+    <Content Include="View\InsertAlbumPage.aspx" />
+    <Content Include="View\InsertArtistPage.aspx" />
+    <Content Include="View\LoginPage.aspx" />
+    <Content Include="View\RegisterPage.aspx" />
+    <Content Include="View\TransactionHistoryPage.aspx" />
+    <Content Include="View\TransactionReportPage.aspx" />
+    <Content Include="View\UpdateAlbumPage.aspx" />
+    <Content Include="View\UpdateArtistPage.aspx" />
+    <Content Include="View\UpdateProfilePage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\AlbumFactory.cs" />
+    <Compile Include="Factory\ArtistFactory.cs" />
+    <Compile Include="Factory\CartFactory.cs" />
+    <Compile Include="Factory\CustomerFactory.cs" />
+    <Compile Include="Factory\TransactionDetailFactory.cs" />
+    <Compile Include="Factory\TransactionHeaderFactory.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopZtationModel.tt</DependentUpon>
     </Compile>
@@ -151,6 +170,104 @@
       <DependentUpon>KpopZtationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AlbumDetailPage.aspx.cs">
+      <DependentUpon>AlbumDetailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AlbumDetailPage.aspx.designer.cs">
+      <DependentUpon>AlbumDetailPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArtistDetailPage.aspx.cs">
+      <DependentUpon>ArtistDetailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ArtistDetailPage.aspx.designer.cs">
+      <DependentUpon>ArtistDetailPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\CartPage.aspx.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\CartPage.aspx.designer.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsertAlbumPage.aspx.cs">
+      <DependentUpon>InsertAlbumPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertAlbumPage.aspx.designer.cs">
+      <DependentUpon>InsertAlbumPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsertArtistPage.aspx.cs">
+      <DependentUpon>InsertArtistPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertArtistPage.aspx.designer.cs">
+      <DependentUpon>InsertArtistPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\NavBar.Master.cs">
+      <DependentUpon>NavBar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\NavBar.Master.designer.cs">
+      <DependentUpon>NavBar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegisterPage.aspx.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RegisterPage.aspx.designer.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransactionHistoryPage.aspx.cs">
+      <DependentUpon>TransactionHistoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TransactionHistoryPage.aspx.designer.cs">
+      <DependentUpon>TransactionHistoryPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransactionReportPage.aspx.cs">
+      <DependentUpon>TransactionReportPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TransactionReportPage.aspx.designer.cs">
+      <DependentUpon>TransactionReportPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateAlbumPage.aspx.cs">
+      <DependentUpon>UpdateAlbumPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateAlbumPage.aspx.designer.cs">
+      <DependentUpon>UpdateAlbumPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateArtistPage.aspx.cs">
+      <DependentUpon>UpdateArtistPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateArtistPage.aspx.designer.cs">
+      <DependentUpon>UpdateArtistPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateProfilePage.aspx.cs">
+      <DependentUpon>UpdateProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateProfilePage.aspx.designer.cs">
+      <DependentUpon>UpdateProfilePage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Model\KpopZtationModel.edmx">
@@ -161,6 +278,7 @@
       <DependentUpon>KpopZtationModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <Content Include="View\NavBar.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -170,10 +288,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Factory\" />
     <Folder Include="Handler\" />
     <Folder Include="Repository\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
