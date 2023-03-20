@@ -25,16 +25,33 @@
             text-decoration: none;
         }
 
-        h1{
+        .logo{
             color: white;
             margin: 5px;
+        }
+
+        footer {
+            padding: 5px;
+            text-align:center;
+            background-color:navy;
+            color: white;
+        }
+
+        .title {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .contentClass {
+            background-color:beige;
+            padding:30px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <nav>
-            <h1>KpopZtation Group B</h1>
+            <h1 class="logo">KpopZtation</h1>
             <asp:LinkButton ID="homepageLink" runat="server" CssClass="linkBtn" OnClick="homepageLink_Click">Home</asp:LinkButton>
             <asp:LinkButton ID="loginpageLink" runat="server" CssClass="linkBtn" OnClick="loginpageLink_Click">Login</asp:LinkButton>
             <asp:LinkButton ID="registerpageLink" runat="server" CssClass="linkBtn" OnClick="registerpageLink_Click">Register</asp:LinkButton>
@@ -45,8 +62,13 @@
         </nav>
         <div>
             <asp:ContentPlaceHolder ID="contentBody" runat="server">
+                
             </asp:ContentPlaceHolder>
         </div>
+        <footer>
+            <h5>2023 - Lab PSD - Group B</h5>
+            <h6>Findy, Gilbert, Juan, Natasha</h6>
+        </footer>
     </form>
 </body>
 </html>

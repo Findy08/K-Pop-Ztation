@@ -16,37 +16,37 @@ namespace KpopZtation_GroupB.View
 
         protected void homepageLink_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/View/HomePage.aspx");
         }
 
         protected void loginpageLink_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/View/LoginPage.aspx");
         }
 
         protected void registerpageLink_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/View/RegisterPage.aspx");
         }
 
         protected void cartLink_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/View/CartPage.aspx");
         }
 
         protected void transactionLink_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void updateProfileLink_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/View/UpdateProfilePage.aspx");
         }
 
         protected void logoutpageLink_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

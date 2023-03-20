@@ -13,5 +13,10 @@ namespace KpopZtation_GroupB.View
         {
 
         }
+
+        protected void loginBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
