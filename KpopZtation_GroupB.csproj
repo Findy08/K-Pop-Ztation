@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +75,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\KpopZtationDatabase.mdf" />
+    <Content Include="App_Data\KpopZtationDatabase_log.ldf">
+      <DependentUpon>KpopZtationDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Assets\Albums\638058597622333864.jfif" />
     <Content Include="Assets\Albums\638058600253472624.jpg" />
     <Content Include="Assets\Albums\638058602735846856.jpg" />
@@ -92,12 +104,62 @@
     <Content Include="Assets\Artists\638059446432559006.jfif" />
     <Content Include="Assets\Artists\638059447901481658.jfif" />
     <Content Include="Assets\Artists\638059450808002463.jfif" />
+    <Content Include="Model\KpopZtationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>KpopZtationModel.Context.cs</LastGenOutput>
+      <DependentUpon>KpopZtationModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\KpopZtationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KpopZtationModel.edmx</DependentUpon>
+      <LastGenOutput>KpopZtationModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Album.cs">
+      <DependentUpon>KpopZtationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Artist.cs">
+      <DependentUpon>KpopZtationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Cart.cs">
+      <DependentUpon>KpopZtationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Customer.cs">
+      <DependentUpon>KpopZtationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpopZtationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KpopZtationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpopZtationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KpopZtationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KpopZtationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KpopZtationModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TransactionDetail.cs">
+      <DependentUpon>KpopZtationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TransactionHeader.cs">
+      <DependentUpon>KpopZtationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Model\KpopZtationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KpopZtationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\KpopZtationModel.edmx.diagram">
+      <DependentUpon>KpopZtationModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -105,6 +167,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
+    <Folder Include="Factory\" />
+    <Folder Include="Handler\" />
+    <Folder Include="Repository\" />
+    <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
