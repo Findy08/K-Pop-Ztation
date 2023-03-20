@@ -5,6 +5,7 @@ Update Progress, yang sudah dikerjakan:
 - Model
 - Database query
 - Factory semua tabel
+- Masterpage
 
 To Do yang belum dikerjakan:
 - UI/Tampilan
