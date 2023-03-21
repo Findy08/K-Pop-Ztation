@@ -130,12 +130,21 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AlbumController.cs" />
+    <Compile Include="Controller\ArtistController.cs" />
+    <Compile Include="Controller\CartController.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\TransactionController.cs" />
     <Compile Include="Factory\AlbumFactory.cs" />
     <Compile Include="Factory\ArtistFactory.cs" />
     <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\CustomerFactory.cs" />
-    <Compile Include="Factory\TransactionDetailFactory.cs" />
     <Compile Include="Factory\TransactionHeaderFactory.cs" />
+    <Compile Include="Handler\AlbumHandler.cs" />
+    <Compile Include="Handler\ArtistHandler.cs" />
+    <Compile Include="Handler\CartHandler.cs" />
+    <Compile Include="Handler\CustomerHandler.cs" />
+    <Compile Include="Handler\TransactionHandler.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>KpopZtationModel.tt</DependentUpon>
     </Compile>
@@ -170,6 +179,13 @@
       <DependentUpon>KpopZtationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AlbumRepository.cs" />
+    <Compile Include="Repository\ArtistRepository.cs" />
+    <Compile Include="Repository\CartRepository.cs" />
+    <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\DatabaseSingleton.cs" />
+    <Compile Include="Repository\TransactionDetailRepository.cs" />
+    <Compile Include="Repository\TransactionHeaderRepository.cs" />
     <Compile Include="View\AlbumDetailPage.aspx.cs">
       <DependentUpon>AlbumDetailPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -286,11 +302,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-    <Folder Include="Handler\" />
-    <Folder Include="Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
