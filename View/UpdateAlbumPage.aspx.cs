@@ -13,5 +13,10 @@ namespace KpopZtation_GroupB.View
         {
 
         }
+
+        protected void updatetAlbumBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

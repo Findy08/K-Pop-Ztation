@@ -45,6 +45,7 @@
         .contentClass {
             background-color:beige;
             padding:30px;
+            min-height: 100vh;
         }
     </style>
 </head>
