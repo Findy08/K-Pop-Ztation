@@ -13,5 +13,15 @@ namespace KpopZtation_GroupB.View
         {
 
         }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void gvCart_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
     }
 }

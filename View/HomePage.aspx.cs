@@ -11,6 +11,21 @@ namespace KpopZtation_GroupB.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void gvArtist_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void gvArtist_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        protected void gvArtist_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
