@@ -6,12 +6,12 @@ Update Progress, yang sudah dikerjakan:
 - Database query
 - Factory semua tabel
 - Masterpage
-- UI untuk insert/update yg ada formnya
+- UI untuk insert/update yg ada formnya, home dan cart gridview
 
 To Do yang belum dikerjakan:
-- UI/Tampilan untuk view
-- Validasi dan CRUD
-- Session/Cookie, Roles
+- UI/Tampilan untuk view data individual
+- Validasi dan CRUD (handler, repo, controller)
+- Session/Cookie, Roles Auth
 
 Penjelasan layer:
 - Controller: buat logic kayak validasi, session/cookie, panggil handler
