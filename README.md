@@ -12,6 +12,7 @@ Update Progress, yang sudah dikerjakan:
 To Do yang belum dikerjakan:
 - UI/Tampilan untuk view data individual
 - Validasi dan CRUD (handler, controller) untuk transaction dan cart
+- Panggil controller di aspx.cs
 - Session/Cookie, Roles Auth
 
 Penjelasan layer:
