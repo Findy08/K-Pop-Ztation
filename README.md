@@ -7,10 +7,11 @@ Update Progress, yang sudah dikerjakan:
 - Factory semua tabel
 - Masterpage
 - UI untuk insert/update yg ada formnya, home dan cart gridview
+- CRUD yg simple untuk album, artist, user
 
 To Do yang belum dikerjakan:
 - UI/Tampilan untuk view data individual
-- Validasi dan CRUD (handler, repo, controller)
+- Validasi dan CRUD (handler, controller) untuk transaction dan cart
 - Session/Cookie, Roles Auth
 
 Penjelasan layer:
