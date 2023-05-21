@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KpopZtation_GroupB.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,12 +12,28 @@ namespace KpopZtation_GroupB.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
+           if(!IsPostBack)
+            {
+                if(Session["customer"] != null || Request.Cookies["customer_cookie"] != null)
+                {
+                    Customer c = (Customer)Session["customer"];
+                    // cuma bisa diakses admin
+                    if (!c.CustomerRole.Equals("A"))
+                    {
+                        Response.Redirect("~/View/ErrorPage.aspx");
+                    }
+                    
+                }
+                
+               
+            } 
+           
         }
 
         protected void insertArtistBtn_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

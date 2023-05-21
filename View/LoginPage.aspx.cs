@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KpopZtation_GroupB.Controller;
+using KpopZtation_GroupB.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +18,27 @@ namespace KpopZtation_GroupB.View
 
         protected void loginBtn_Click(object sender, EventArgs e)
         {
+            string email = emailTb.Text;
+            string password = passwordTb.Text;
+            bool isRemember = rememberCb.Checked;
+            string response = CustomerController.validateLoginCustomer(email, password);
+            errorMsg.Text = response;
 
+            if(response.Equals(""))
+            {
+                Customer c = CustomerController.doLogin(email, password);
+                Session["customer"] = c;
+                
+                if(isRemember)
+                {
+                    HttpCookie cookie = new HttpCookie("customer_cookie");
+                    cookie.Value = c.CustomerID.ToString();
+                    cookie.Expires = DateTime.Now.AddHours(10);
+                    Response.Cookies.Add(cookie);
+                }
+                Response.Redirect("~/View/HomePage.aspx");
+            }
+            
         }
     }
 }

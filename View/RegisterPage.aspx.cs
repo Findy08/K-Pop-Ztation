@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KpopZtation_GroupB.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,7 @@ namespace KpopZtation_GroupB.View
 
         protected void registerBtn_Click(object sender, EventArgs e)
         {
-
+            CustomerController.doRegister(nameTb.Text, emailTb.Text, genderRb.SelectedItem.Value.ToString(), addressTb.Text, passwordTb.Text);
         }
     }
 }

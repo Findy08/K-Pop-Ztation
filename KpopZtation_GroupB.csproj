@@ -117,6 +117,7 @@
     <Content Include="View\AlbumDetailPage.aspx" />
     <Content Include="View\ArtistDetailPage.aspx" />
     <Content Include="View\CartPage.aspx" />
+    <Content Include="View\ErrorPage.aspx" />
     <Content Include="View\HomePage.aspx" />
     <Content Include="View\InsertAlbumPage.aspx" />
     <Content Include="View\InsertArtistPage.aspx" />
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="View\CartPage.aspx.designer.cs">
       <DependentUpon>CartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>

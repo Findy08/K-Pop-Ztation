@@ -12,8 +12,8 @@
         <br />
         <asp:Label ID="Label6" runat="server" Text="Gender"></asp:Label>
         <asp:RadioButtonList ID="genderRb" runat="server">
-            <asp:ListItem>Male</asp:ListItem>
-            <asp:ListItem>Female</asp:ListItem>
+            <asp:ListItem Value="Male">Male</asp:ListItem>
+            <asp:ListItem Value="Female">Female</asp:ListItem>
         </asp:RadioButtonList>
         <br />
         <asp:Label ID="Label3" runat="server" Text="Address"></asp:Label>
