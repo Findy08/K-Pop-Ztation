@@ -1,6 +1,8 @@
 # KpopZtation_GroupB
 tugas lab psd kpopztation ddd
 
+Dokumentasi yang lumayan lengkap: https://docs.google.com/document/d/1KL0mfL__XqdMkowTFt-LyOc69nfyMgfnDKOm5A6cMSQ/edit?usp=sharing 
+
 Update Progress, yang sudah dikerjakan:
 - Model
 - Database query
