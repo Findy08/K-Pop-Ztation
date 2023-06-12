@@ -18,10 +18,10 @@ namespace KpopZtation_GroupB.View
 
         protected void loginBtn_Click(object sender, EventArgs e)
         {
-            string email = emailTb.Text;
-            string password = passwordTb.Text;
+            String email = emailTb.Text;
+            String password = passwordTb.Text;
             bool isRemember = rememberCb.Checked;
-            string response = CustomerController.validateLoginCustomer(email, password);
+            String response = CustomerController.validateLoginCustomer(email, password);
             errorMsg.Text = response;
 
             if(response.Equals(""))

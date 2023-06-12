@@ -28,5 +28,10 @@ namespace KpopZtation_GroupB.Handler
         {
             return CustomerRepository.CheckEmailUnique(email);
         }
+
+        public static Customer GetCustomerById(int id)
+        {
+            return CustomerRepository.GetCustomerById(id);
+        }
     }
 }

@@ -1,6 +1,8 @@
-﻿using KpopZtation_GroupB.Model;
+﻿using KpopZtation_GroupB.Controller;
+using KpopZtation_GroupB.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,7 +15,7 @@ namespace KpopZtation_GroupB.View
         protected void Page_Load(object sender, EventArgs e)
         {
            
-           if(!IsPostBack)
+           /*if(!IsPostBack)
             {
                 if(Session["customer"] != null || Request.Cookies["customer_cookie"] != null)
                 {
@@ -27,13 +29,24 @@ namespace KpopZtation_GroupB.View
                 }
                 
                
-            } 
+            } */
            
         }
 
         protected void insertArtistBtn_Click(object sender, EventArgs e)
         {
+            String name = nameTb.Text;
+            String imgPath = Path.Combine(Server.MapPath("~/Assets/Artists/"), Path.GetFileName(imageUpload.FileName)); ;
+            String response = ArtistController.validateInsertArtist(name, imgPath);
+            errorMsg.Text = response;
+
             
+            if (response.Equals(""))
+            {
+                errorMsg.Text = imgPath;
+                imageUpload.SaveAs(imgPath);
+                ArtistController.doInsertArtist(name, imgPath);
+            }
         }
     }
 }

@@ -51,5 +51,15 @@ namespace KpopZtation_GroupB.Repository
             }
             return false;
         }
+
+        public static bool CheckArtistNameUnique(String name)
+        {
+            Artist artist = (from a in db.Artists where a.ArtistName == name select a).FirstOrDefault();
+            if(artist == null)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

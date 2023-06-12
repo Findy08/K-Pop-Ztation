@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KpopZtation_GroupB.Controller;
+using KpopZtation_GroupB.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +18,13 @@ namespace KpopZtation_GroupB.View
 
         protected void updateProfileBtn_Click(object sender, EventArgs e)
         {
-
+            String name = nameTb.Text;
+            String email = emailTb.Text;
+            String gender = genderRb.SelectedValue;
+            String address = addressTb.Text;
+            String password = passwordTb.Text;
+            Customer c = (Customer)Session["customer"];
+            errorMsg.Text = CustomerController.doUpdateProfile(c.CustomerID, name, email, gender, address, password);
         }
     }
 }

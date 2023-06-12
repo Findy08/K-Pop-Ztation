@@ -46,7 +46,15 @@ namespace KpopZtation_GroupB.View
 
         protected void logoutpageLink_Click(object sender, EventArgs e)
         {
-            
+            // logout
+            String[] cookies = Request.Cookies.AllKeys;
+            foreach(String cookie in cookies)
+            {
+                Response.Cookies[cookie].Expires = DateTime.Now.AddDays(-1);
+            }
+            Session.Remove("customer");
+            Response.Redirect("~/View/LoginPage.aspx");
+            // destroy all cookies variable
         }
     }
 }
