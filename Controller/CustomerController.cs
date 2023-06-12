@@ -1,5 +1,6 @@
 ﻿using KpopZtation_GroupB.Handler;
 using KpopZtation_GroupB.Model;
+using System.Text.RegularExpressions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,31 @@ namespace KpopZtation_GroupB.Controller
         {
             String response = "";
             // validasi name, email, gender, address, password lalu return error msg
+            if(string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(address) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(gender))
+            {
+                response = "All field must be filled";
+            }
+            else if(name.Length < 5 || name.Length > 50)
+            {
+                response = "Name length must be between 5 and 50 characters";
+            }
+            else if(CustomerHandler.CheckEmailUnique(email) == false)
+            {
+                response = "Email must be unique, this email is already registered";
+            }
+            else if(!address.EndsWith("Street"))
+            {
+                response = "Address must ends with Street";
+            }
+            else if(Regex.IsMatch(password, "^[a-zA-Z0-9]*$") == false)
+            {
+                response = "Password must be alphanumeric";
+            }
+            else
+            {
+                doRegister(name, email, gender, address, password);
+            }
+
             return response;
         }
         public static void doRegister(String name, String email, String gender, String address, String password)

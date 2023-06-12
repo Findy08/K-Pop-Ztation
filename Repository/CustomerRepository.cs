@@ -42,5 +42,15 @@ namespace KpopZtation_GroupB.Repository
             }
             return false;
         }
+
+        public static bool CheckEmailUnique(String email)
+        {
+            Customer cust = (from c in db.Customers where c.CustomerEmail == email select c).FirstOrDefault();
+            if (cust == null)
+            {
+                return true;
+            }
+            else return false;
+        }
     }
 }

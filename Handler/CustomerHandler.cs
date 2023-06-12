@@ -23,5 +23,10 @@ namespace KpopZtation_GroupB.Handler
         {
             return CustomerRepository.UpdateCustomer(id, name, email, gender, address, password);
         }
+
+        public static bool CheckEmailUnique(String email)
+        {
+            return CustomerRepository.CheckEmailUnique(email);
+        }
     }
 }

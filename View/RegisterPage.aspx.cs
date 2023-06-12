@@ -17,7 +17,17 @@ namespace KpopZtation_GroupB.View
 
         protected void registerBtn_Click(object sender, EventArgs e)
         {
-            CustomerController.doRegister(nameTb.Text, emailTb.Text, genderRb.SelectedItem.Value.ToString(), addressTb.Text, passwordTb.Text);
+            String name = nameTb.Text;
+            String email = emailTb.Text;
+            String gender = genderRb.SelectedValue;
+            String address = addressTb.Text;
+            String password = passwordTb.Text;
+            errorMsg.Text = CustomerController.validateRegisterCustomer(name, email, gender, address, password);
+            if(errorMsg.Text == "")
+            {
+                Response.Redirect("~/View/HomePage.aspx");
+            }
+            
         }
     }
 }
