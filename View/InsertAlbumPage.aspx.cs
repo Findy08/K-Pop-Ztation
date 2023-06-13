@@ -58,7 +58,7 @@ namespace KpopZtation_GroupB.View
             {
                 imageUpload.SaveAs(imgPath);
                 AlbumController.doInsertAlbum(artistId, name, desc, price, stock, "~/Assets/Albums/" + imageUpload.FileName);
-
+                Response.Redirect("~/View/ArtistDetailPage.aspx?ID=" + artistId);
             }
         }
     }

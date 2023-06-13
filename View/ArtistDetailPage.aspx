@@ -6,8 +6,10 @@
         <h1 class="title">Artist Detail</h1>
         <asp:Label ID="nameLb" runat="server"></asp:Label>
         <br />
-        <asp:Image ID="artistImg" runat="server"/> 
         <asp:LinkButton ID="insertAlbumLink" runat="server" OnClick="insertAlbumLink_Click">Insert Album</asp:LinkButton>
+        <br />
+        <asp:Image ID="artistImg" runat="server"/> 
+        
         <asp:GridView ID="gvAlbum" runat="server" AutoGenerateColumns="False" OnRowDeleting="gvAlbum_RowDeleting" OnRowEditing="gvAlbum_RowEditing" OnSelectedIndexChanged="gvAlbum_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="AlbumID" HeaderText="ID" SortExpression="ArtistID" />

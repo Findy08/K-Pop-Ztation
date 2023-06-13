@@ -13,7 +13,7 @@ namespace KpopZtation_GroupB.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 int id = int.Parse(Request["ID"].ToString());
                 Artist artist = ArtistController.GetArtistById(id);
