@@ -36,7 +36,9 @@ namespace KpopZtation_GroupB.View
 
         protected void gvArtist_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int index = gvArtist.SelectedIndex;
+            int id = int.Parse(gvArtist.Rows[index].Cells[0].Text);
+            Response.Redirect("~/View/ArtistDetailPage.aspx?ID=" + id);
         }
     }
 }
