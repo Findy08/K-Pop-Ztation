@@ -10,7 +10,7 @@ namespace KpopZtation_GroupB.Controller
 {
     public class ArtistController
     {
-        public static String validateInsertArtist(String name, String imagePath, bool fileExists, int fileSize, String fileExt)
+        public static String validateArtist(String name, String imagePath, bool fileExists, int fileSize, String fileExt)
         {
             String response = "";
             // validasi name, img
@@ -71,6 +71,11 @@ namespace KpopZtation_GroupB.Controller
         public static bool RemoveArtist(int id)
         {
             return ArtistHandler.RemoveArtist(id);
+        }
+
+        public static Artist GetArtistById(int id)
+        {
+            return ArtistHandler.GetArtistById(id);
         }
     }
 }

@@ -46,7 +46,7 @@ namespace KpopZtation_GroupB.View
                 imgSize = imageUpload.PostedFile.ContentLength;
                 imgExt = System.IO.Path.GetExtension(imageUpload.FileName);
             }
-            response = ArtistController.validateInsertArtist(name, imgPath, imageUpload.HasFile, imgSize, imgExt);
+            response = ArtistController.validateArtist(name, imgPath, imageUpload.HasFile, imgSize, imgExt);
             
             errorMsg.Text = response;
 
