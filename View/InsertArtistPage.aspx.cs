@@ -36,16 +36,26 @@ namespace KpopZtation_GroupB.View
         protected void insertArtistBtn_Click(object sender, EventArgs e)
         {
             String name = nameTb.Text;
-            String imgPath = Path.Combine(Server.MapPath("~/Assets/Artists/"), Path.GetFileName(imageUpload.FileName)); ;
-            String response = ArtistController.validateInsertArtist(name, imgPath);
+            String imgPath = "";
+            int imgSize = 0;
+            String imgExt = "";
+            String response = "";
+            if(imageUpload.HasFile)
+            {
+                imgPath = Server.MapPath("~/Assets/Artists/") + imageUpload.FileName;
+                imgSize = imageUpload.PostedFile.ContentLength;
+                imgExt = System.IO.Path.GetExtension(imageUpload.FileName);
+            }
+            response = ArtistController.validateInsertArtist(name, imgPath, imageUpload.HasFile, imgSize, imgExt);
+            
             errorMsg.Text = response;
 
             
             if (response.Equals(""))
             {
-                errorMsg.Text = imgPath;
                 imageUpload.SaveAs(imgPath);
-                ArtistController.doInsertArtist(name, imgPath);
+                ArtistController.doInsertArtist(name, "~/Assets/Artists/" + imageUpload.FileName);
+                
             }
         }
     }

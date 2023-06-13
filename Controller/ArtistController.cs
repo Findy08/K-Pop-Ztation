@@ -9,7 +9,7 @@ namespace KpopZtation_GroupB.Controller
 {
     public class ArtistController
     {
-        public static String validateInsertArtist(String name, String imagePath)
+        public static String validateInsertArtist(String name, String imagePath, bool fileExists, int fileSize, String fileExt)
         {
             String response = "";
             // validasi name, img
@@ -21,29 +21,27 @@ namespace KpopZtation_GroupB.Controller
             {
                 response = "Artist name must be unique";
             }
-            else if(!File.Exists(imagePath))
+            else if(fileExists == false)
             {
-                response = "Image must be chosen";
+                response = "File must be chosen";
             }
-            else
+            else 
             {
                 bool isValid = false;
-                String[] fileExt = { ".png", ".jpg", ".jpeg", ".jfif", ".PNG", ".JPG", ".JPEG", ".JFIF" };
+                String[] validExt = { ".png", ".jpg", ".jpeg", ".jfif", ".PNG", ".JPG", ".JPEG", ".JFIF" };
                 for (int i = 0; i < fileExt.Length; i++)
                 {
-                    if (imagePath.Contains(fileExt[i]))
+                    if (fileExt.Equals(validExt[i]))
                     {
                         isValid = true;
                     }
                 }
 
-                FileInfo imgInfo = new FileInfo(imagePath);
-
                 if (isValid == false)
                 {
                     response = "File extention must be .png, .jpg, .jpeg, .jfif";
                 }
-                else if (imgInfo.Length > 2048000)
+                else if (fileSize > 2048000)
                 {
                     response = "File size must be lower than 2MB";
                 }
