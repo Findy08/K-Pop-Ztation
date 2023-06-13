@@ -7,7 +7,7 @@
         <asp:Label ID="nameLb" runat="server"></asp:Label>
         <br />
         <asp:Image ID="artistImg" runat="server"/> 
-        
+        <asp:LinkButton ID="insertAlbumLink" runat="server" OnClick="insertAlbumLink_Click">Insert Album</asp:LinkButton>
         <asp:GridView ID="gvAlbum" runat="server" AutoGenerateColumns="False" OnRowDeleting="gvAlbum_RowDeleting" OnRowEditing="gvAlbum_RowEditing" OnSelectedIndexChanged="gvAlbum_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="AlbumID" HeaderText="ID" SortExpression="ArtistID" />
@@ -20,7 +20,7 @@
                 <asp:BoundField DataField="AlbumName" HeaderText="Album Name" SortExpression="AlbumID" />
                 <asp:BoundField DataField="AlbumPrice" HeaderText="Album Price" SortExpression="AlbumID" />
                 <asp:BoundField DataField="AlbumDescription" HeaderText="Album Description" SortExpression="AlbumID" />
-                <asp:CommandField ButtonType="Button" ShowSelectButton="True" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" SelectText="Album Detail" />
+                <asp:CommandField ButtonType="Button" ShowCancelButton="False" ShowDeleteButton="True" ShowSelectButton="True" ShowEditButton="True" SelectText="Album Detail"/>
             </Columns>
 
         </asp:GridView>

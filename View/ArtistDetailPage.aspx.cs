@@ -42,5 +42,11 @@ namespace KpopZtation_GroupB.View
         {
 
         }
+
+        protected void insertAlbumLink_Click(object sender, EventArgs e)
+        {
+            int artistId = int.Parse(Request["ID"].ToString());
+            Response.Redirect("~/View/InsertAlbumPage.aspx?ID="+artistId);
+        }
     }
 }
