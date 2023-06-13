@@ -1,4 +1,5 @@
 ﻿using KpopZtation_GroupB.Handler;
+using KpopZtation_GroupB.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -57,9 +58,19 @@ namespace KpopZtation_GroupB.Controller
             ArtistHandler.CreateArtist(name, image);
         }
 
-        public static bool doUpdateArtist(String name, String image)
+        public static void doUpdateArtist(int id, String name, String image)
         {
-            return true;
+            ArtistHandler.UpdateArtist(id, name, image);
+        }
+
+        public static List<Artist> GetAllArtist()
+        {
+            return ArtistHandler.GetAllArtist();
+        }
+
+        public static bool RemoveArtist(int id)
+        {
+            return ArtistHandler.RemoveArtist(id);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace KpopZtation_GroupB.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            /*if (!IsPostBack)
             {
                 if (Session["customer"] != null)
                 {
@@ -23,7 +23,7 @@ namespace KpopZtation_GroupB.View
                         Response.Redirect("~/View/ErrorPage.aspx");
                     }
                 }
-            }
+            }*/
         }
 
         protected void updateArtistBtn_Click(object sender, EventArgs e)
