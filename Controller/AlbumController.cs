@@ -70,5 +70,21 @@ namespace KpopZtation_GroupB.Controller
         {
             return true;
         }
+
+        public static List<Album> GetAlbumByArtistId(int artistId)
+        {
+            return AlbumHandler.GetAlbumByArtistId(artistId);
+        }
+        
+
+        public static Album GetAlbumById(int albumId)
+        {
+            return AlbumHandler.GetAlbumById(albumId);
+        }
+
+        public static bool RemoveAlbum(int albumId)
+        {
+            return AlbumHandler.RemoveAlbum(albumId);
+        }
     }
 }

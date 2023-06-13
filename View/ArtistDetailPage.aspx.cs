@@ -24,23 +24,32 @@ namespace KpopZtation_GroupB.View
                     artistImg.ImageUrl = ResolveUrl(imgPath);
                 }
 
-
+                gvAlbum.DataSource = AlbumController.GetAlbumByArtistId(id);
+                gvAlbum.DataBind();
             }
         }
 
         protected void gvAlbum_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            GridViewRow row = gvAlbum.Rows[e.RowIndex];
+            int id = int.Parse(row.Cells[0].Text);
+            AlbumController.RemoveAlbum(id);
+            int artistId = int.Parse(Request["ID"].ToString());
+            Response.Redirect("~/View/InsertAlbumPage.aspx?ID=" + artistId);
         }
 
         protected void gvAlbum_RowEditing(object sender, GridViewEditEventArgs e)
         {
-
+            GridViewRow row = gvAlbum.Rows[e.NewEditIndex];
+            int id = int.Parse(row.Cells[0].Text);
+            Response.Redirect("~/View/UpdateAlbumPage.aspx?ID=" + id);
         }
 
         protected void gvAlbum_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int index = gvAlbum.SelectedIndex;
+            int id = int.Parse(gvAlbum.Rows[index].Cells[0].Text);
+            Response.Redirect("~/View/AlbumDetailPage.aspx?ID=" + id);
         }
 
         protected void insertAlbumLink_Click(object sender, EventArgs e)
