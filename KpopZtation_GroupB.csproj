@@ -181,8 +181,7 @@
     <Compile Include="Repository\CartRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\DatabaseSingleton.cs" />
-    <Compile Include="Repository\TransactionDetailRepository.cs" />
-    <Compile Include="Repository\TransactionHeaderRepository.cs" />
+    <Compile Include="Repository\TransactionRepository.cs" />
     <Compile Include="View\AlbumDetailPage.aspx.cs">
       <DependentUpon>AlbumDetailPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

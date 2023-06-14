@@ -5,7 +5,9 @@ using System.Web;
 
 namespace KpopZtation_GroupB.Repository
 {
-    public class TransactionHeaderRepository
+    public class TransactionRepository
     {
+        // add data
+        // show data
     }
 }

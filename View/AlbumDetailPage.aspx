@@ -27,6 +27,8 @@
         <asp:Label ID="Label9" runat="server" Text="Label">Quantity: </asp:Label>
         <asp:TextBox ID="qtyTb" runat="server"></asp:TextBox>
         <br />
+        <asp:Label ID="errorMsg" runat="server" Text=""></asp:Label>
+        <br />
         <asp:Button ID="addCartBtn" runat="server" Text="Add to Cart" OnClick="addCartBtn_Click"/>
 
     </div>

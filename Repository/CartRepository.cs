@@ -10,5 +10,9 @@ namespace KpopZtation_GroupB.Repository
     {
         private static KpopZtationDatabaseEntities db = DatabaseSingleton.GetInstance();
         
+        // show cart
+        // add cart
+        // remove cart
+        // find cart by customer id and album id
     }
 }

@@ -105,5 +105,10 @@ namespace KpopZtation_GroupB.Controller
             return response;
 
         }
+
+        public static Customer GetCustomerById(int id)
+        {
+            return CustomerHandler.GetCustomerById(id);
+        }
     }
 }

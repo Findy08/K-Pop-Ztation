@@ -1,4 +1,5 @@
 ﻿using KpopZtation_GroupB.Controller;
+using KpopZtation_GroupB.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,26 @@ namespace KpopZtation_GroupB.View
         {
             if(!IsPostBack)
             {
+                /*guest bisa akses, jd dicomment*/
+                /*if (Session["customer"] == null && Request.Cookies["customer_cookie"] == null)
+                {
+                    Response.Redirect("~/View/LoginPage.aspx");
+                }
+                else
+                {*/
+                    Customer cust;
+                    if(Session["customer"] == null)
+                    {
+                        int id = int.Parse(Request.Cookies["customer_cookie"].Value);
+                        cust = CustomerController.GetCustomerById(id);
+                        Session["customer"] = cust;
+                    }
+                    else
+                    {
+                        cust = (Customer)Session["customer"];
+                    }
+                    userNameLb.Text = cust.CustomerName;
+                /*}*/
                 gvArtist.DataSource = ArtistController.GetAllArtist();
                 gvArtist.DataBind();
             }

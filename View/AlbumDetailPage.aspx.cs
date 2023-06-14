@@ -31,7 +31,29 @@ namespace KpopZtation_GroupB.View
 
         protected void addCartBtn_Click(object sender, EventArgs e)
         {
+            int albumId = int.Parse(Request["ID"].ToString());
+            Album album = AlbumController.GetAlbumById(albumId);
+            int albumStock = album.AlbumStock;
 
+            String qtyText = qtyTb.Text;
+            int qty = -1;
+            if(string.IsNullOrEmpty(qtyText))
+            {
+                qty = -1;
+            }
+            else
+            {
+                qty = int.Parse(qtyText);
+            }
+            String response = CartController.validateCart(qty, albumStock);
+
+            errorMsg.Text = response;
+
+            if(response.Equals(""))
+            {
+                // add to cart
+
+            }
         }
     }
 }
