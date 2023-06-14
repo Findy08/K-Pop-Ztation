@@ -28,6 +28,12 @@ namespace KpopZtation_GroupB.Handler
 
         public static bool RemoveArtist(int id)
         {
+            // hapus album juga
+            Artist a = GetArtistById(id);
+            if(a.Albums.Count > 0)
+            {
+                AlbumRepository.RemoveAlbumByArtist(a.Albums.ToList());
+            }
             return ArtistRepository.RemoveArtist(id);
         }
 
@@ -40,6 +46,7 @@ namespace KpopZtation_GroupB.Handler
         {
             return ArtistRepository.CheckArtistNameUnique(name);
         }
+
     }
 
     

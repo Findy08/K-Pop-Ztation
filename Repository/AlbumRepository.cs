@@ -56,5 +56,18 @@ namespace KpopZtation_GroupB.Repository
             }
             return false;
         }
+
+        public static bool RemoveAlbumByArtist(List<Album> album)
+        {
+            if(album != null)
+            {
+                db.Albums.RemoveRange(album);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+            
+            
+        }
     }
 }
