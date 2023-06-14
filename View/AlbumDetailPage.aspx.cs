@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KpopZtation_GroupB.Controller;
+using KpopZtation_GroupB.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +12,24 @@ namespace KpopZtation_GroupB.View
     public partial class AlbumDetailPage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!IsPostBack)
+            {
+                int albumId = int.Parse(Request["ID"].ToString());
+                Album album = AlbumController.GetAlbumById(albumId);
+                nameLb.Text = album.AlbumName;
+                String imgPath = album.AlbumImage;
+                if (!string.IsNullOrEmpty(imgPath))
+                {
+                    albumImg.ImageUrl = ResolveUrl(imgPath);
+                }
+                descLb.Text = album.AlbumDescription;
+                priceLb.Text = album.AlbumPrice.ToString();
+                stockLb.Text = album.AlbumStock.ToString();
+            }
+        }
+
+        protected void addCartBtn_Click(object sender, EventArgs e)
         {
 
         }

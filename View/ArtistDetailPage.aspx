@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
     <div class="contentClass">
         <h1 class="title">Artist Detail</h1>
+        <asp:Label ID="Label1" runat="server">Artist Name: </asp:Label>
         <asp:Label ID="nameLb" runat="server"></asp:Label>
         <br />
         <asp:LinkButton ID="insertAlbumLink" runat="server" OnClick="insertAlbumLink_Click">Insert Album</asp:LinkButton>
