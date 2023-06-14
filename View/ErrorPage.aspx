@@ -7,13 +7,26 @@
     <title>Error</title>
 </head>
 <body>
-    <h1>Whoopsy Daisy! It's a Forbidden Page</h1>
-    <h5>You should not access this page because wrong role!</h5>
-    <p>
-        Enter if you dare, the forbidden page awaits, <br />
-        A curse befalls those who venture, eternal pop-ups and broken links shall be your fate.
-    </p>
-    <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="~/View/LoginPage.aspx">Please login with correct account!</asp:HyperLink>
+    <style>
+        * {
+            background-color: #660000;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        h5 {
+            color: white;
+        }
+        .white-text {
+            color: white;
+        }
+    </style>
+    <h1>Oh no! It's a Forbidden Page</h1>
+    <h5>You should not access this page because you are logged in with wrong role!</h5>
+    <h1>(ㆆ _ ㆆ)</h1>
+    <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="~/View/LoginPage.aspx" CssClass="white-text">Please login with correct account!</asp:HyperLink>
     
 </body>
 </html>

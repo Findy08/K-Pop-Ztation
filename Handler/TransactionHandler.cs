@@ -7,5 +7,6 @@ namespace KpopZtation_GroupB.Handler
 {
     public class TransactionHandler
     {
+        
     }
 }

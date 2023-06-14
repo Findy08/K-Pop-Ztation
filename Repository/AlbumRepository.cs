@@ -45,6 +45,18 @@ namespace KpopZtation_GroupB.Repository
             return false;
         }
 
+        public static bool UpdateAlbumStock(int albumId, int qtyBought)
+        {
+            Album album = GetAlbumById(albumId);
+            if(album != null)
+            {
+                album.AlbumStock = album.AlbumStock - qtyBought;
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
         public static bool RemoveAlbum(int albumId)
         {
             Album album = GetAlbumById(albumId);

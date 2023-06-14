@@ -15,8 +15,15 @@ namespace KpopZtation_GroupB.Handler
             List<Cart> cart = GetAllCartByCustomerId(customerId);
             if(cart.Count > 0)
             {
+                // reduce the stock of album
+                foreach(Cart c in cart)
+                {
+                    AlbumRepository.UpdateAlbumStock(c.AlbumID, c.Qty);
+                }
                 // insert to transaction history
-
+                // search customer by id
+                Customer cust = CustomerRepository.GetCustomerById(customerId);
+                TransactionRepository.CreateTransaction(cust, cart);
                 // delete all cart from this customer
                 CartRepository.RemoveAllCartByCustomer(cart);
                 return true;
@@ -36,7 +43,20 @@ namespace KpopZtation_GroupB.Handler
         // add cart
         public static void CreateCart(Customer cust, Album alb, int qty)
         {
-            CartRepository.CreateCart(cust, alb, qty);
+            // search by cust and alb first
+            Cart item = GetCartByCustomerAndAlbum(cust.CustomerID, alb.AlbumID);
+            // if exist, add the qty to the item
+            if(item != null)
+            {
+                // update the cart qty
+                CartRepository.UpdateCartQuantity(item, qty);
+            }
+            else
+            {
+                // if not exist, create new item to cart
+                CartRepository.CreateCart(cust, alb, qty);
+            }
+            
         }
 
 
@@ -49,7 +69,7 @@ namespace KpopZtation_GroupB.Handler
         // find cart by customer id and album id
         public static Cart GetCartByCustomerAndAlbum(int customerId, int albumId)
         {
-            return GetCartByCustomerAndAlbum(customerId, albumId);
+            return CartRepository.GetCartByCustomerAndAlbum(customerId, albumId);
         }
     }
 }

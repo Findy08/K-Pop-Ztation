@@ -52,7 +52,20 @@ namespace KpopZtation_GroupB.View
             if(response.Equals(""))
             {
                 // add to cart
-
+                // cari customer yg sedang log in
+                Customer cust;
+                if (Session["customer"] == null)
+                {
+                    int id = int.Parse(Request.Cookies["customer_cookie"].Value);
+                    cust = CustomerController.GetCustomerById(id);
+                    Session["customer"] = cust;
+                }
+                else
+                {
+                    cust = (Customer)Session["customer"];
+                }
+                
+                CartController.AddItemToCart(cust, album, qty);
             }
         }
     }

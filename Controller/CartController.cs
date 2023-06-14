@@ -1,4 +1,5 @@
-﻿using KpopZtation_GroupB.Model;
+﻿using KpopZtation_GroupB.Handler;
+using KpopZtation_GroupB.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,11 @@ namespace KpopZtation_GroupB.Controller
                 response = "Quantity cant be more than the stock album";
             }
             return response;
+        }
+
+        public static void AddItemToCart(Customer cust, Album alb, int qty)
+        {
+            CartHandler.CreateCart(cust, alb, qty);
         }
     }
 }

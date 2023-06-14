@@ -56,5 +56,17 @@ namespace KpopZtation_GroupB.Repository
         {
             return (from ca in db.Carts where ca.AlbumID == albumId && ca.CustomerID == customerId select ca).FirstOrDefault();
         }
+
+        // update cart quantity
+        public static bool UpdateCartQuantity(Cart item, int newQty)
+        {
+            if(item != null)
+            {
+                item.Qty = item.Qty + newQty;
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }
