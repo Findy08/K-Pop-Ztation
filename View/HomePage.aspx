@@ -10,7 +10,7 @@
                 <asp:BoundField DataField="ArtistName" HeaderText="Artist Name" SortExpression="ArtistName" />
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:Image ID="imgId" runat="server" HeaderText="Artist Image" ImageUrl='<%#Eval("ArtistImage")%>' />
+                        <asp:Image ID="imgId" runat="server" HeaderText="Artist Image" ImageUrl='<%#Eval("ArtistImage")%>' CssClass="imgWidth-250" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:CommandField ButtonType="Button" ShowSelectButton="True" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" SelectText="Artist Detail" />

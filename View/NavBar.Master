@@ -11,11 +11,12 @@
         * {
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         nav {
             padding: 20px;
-            background-color:navy;
+            background-color:#403F3B;
         }
 
         .linkBtn {
@@ -33,7 +34,7 @@
         footer {
             padding: 5px;
             text-align:center;
-            background-color:navy;
+            background-color:#403F3B;
             color: white;
         }
 
@@ -43,9 +44,19 @@
         }
 
         .contentClass {
-            background-color:beige;
+            background-color:#FEFCED;
             padding:30px;
             min-height: 100vh;
+        }
+
+        .imgWidth-250 {
+            width: 250px;
+            height: auto;
+        }
+
+        .imgWidth-500 {
+            width: 500px;
+            height: auto;
         }
     </style>
 </head>
@@ -67,7 +78,7 @@
             </asp:ContentPlaceHolder>
         </div>
         <footer>
-            <h5>2023 - Lab PSD - Group B</h5>
+            <h5>All rights reserved - 2023</h5>
             <h6>Findy, Gilbert, Juan, Natasha</h6>
         </footer>
     </form>

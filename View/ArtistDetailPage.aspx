@@ -8,14 +8,14 @@
         <br />
         <asp:LinkButton ID="insertAlbumLink" runat="server" OnClick="insertAlbumLink_Click">Insert Album</asp:LinkButton>
         <br />
-        <asp:Image ID="artistImg" runat="server"/> 
+        <asp:Image ID="artistImg" CssClass="imgWidth-500" runat="server"/> 
         
         <asp:GridView ID="gvAlbum" runat="server" AutoGenerateColumns="False" OnRowDeleting="gvAlbum_RowDeleting" OnRowEditing="gvAlbum_RowEditing" OnSelectedIndexChanged="gvAlbum_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="AlbumID" HeaderText="ID" SortExpression="ArtistID" />
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:Image ID="imgId" runat="server" HeaderText="Album Image" ImageUrl='<%#Eval("AlbumImage")%>' />
+                        <asp:Image ID="imgId" runat="server" HeaderText="Album Image" ImageUrl='<%#Eval("AlbumImage")%>' CssClass="imgWidth-250"/>
                     </ItemTemplate>
                 </asp:TemplateField>
                 
