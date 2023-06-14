@@ -25,8 +25,8 @@ namespace KpopZtation_GroupB.Repository
             {
                 TransactionDetail td = TransactionDetailFactory.CreateTransactionDetail(cart);
                 tdList.Add(td);
-                db.TransactionDetails.Add(td);
-                db.SaveChanges();
+                /*db.TransactionDetails.Add(td);
+                db.SaveChanges();*/
             }
             // create transaction header
             TransactionHeader th = TransactionHeaderFactory.CreateTransactionHeader(DateTime.Now, cust, tdList);

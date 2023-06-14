@@ -58,6 +58,8 @@
             width: 500px;
             height: auto;
         }
+
+        
     </style>
 </head>
 <body>

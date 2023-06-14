@@ -12,9 +12,21 @@ namespace KpopZtation_GroupB.Repository
         private static KpopZtationDatabaseEntities db = DatabaseSingleton.GetInstance();
         
         // show cart
-        public static List<Cart> GetAllCartByCustomerId(int customerId)
+        public static List<object> GetAllCartByCustomerId(int customerId)
         {
-            return (from ca in db.Carts where ca.CustomerID == customerId select ca).ToList();
+            var result = (from ca in db.Carts 
+                    join al in db.Albums on ca.AlbumID equals al.AlbumID 
+                    where ca.CustomerID == customerId 
+                    orderby al.AlbumID
+                    select new { al.AlbumID, al.AlbumImage, al.AlbumName, al.AlbumPrice, ca.Qty}).ToList();
+            return result.Cast<object>().ToList();
+        }
+
+        public static List<Cart> GetAllCartByCustomerIdPure(int customerId)
+        {
+            return (from ca in db.Carts
+                    where ca.CustomerID == customerId
+                    select ca).ToList();
         }
 
         // add cart

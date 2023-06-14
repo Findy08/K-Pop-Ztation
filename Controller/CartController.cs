@@ -28,5 +28,27 @@ namespace KpopZtation_GroupB.Controller
         {
             CartHandler.CreateCart(cust, alb, qty);
         }
+
+        public static bool CheckOut(int customerId)
+        {
+            return CartHandler.CheckOut(customerId);
+        }
+
+        public static List<object> GetAllCartByCustomerId(int customerId)
+        {
+            return CartHandler.GetAllCartByCustomerId(customerId);
+        }
+
+        // remove individual data in cart
+        public static bool RemoveOneCart(int customerId, int albumId)
+        {
+            return CartHandler.RemoveOneCart(customerId, albumId);
+        }
+
+        // find cart by customer id and album id
+        public static Cart GetCartByCustomerAndAlbum(int customerId, int albumId)
+        {
+            return CartHandler.GetCartByCustomerAndAlbum(customerId, albumId);
+        }
     }
 }

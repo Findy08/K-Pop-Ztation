@@ -12,7 +12,7 @@ namespace KpopZtation_GroupB.Handler
         public static bool CheckOut(int customerId)
         {
             // hapus semua cart customer ini
-            List<Cart> cart = GetAllCartByCustomerId(customerId);
+            List<Cart> cart = CartRepository.GetAllCartByCustomerIdPure(customerId);
             if(cart.Count > 0)
             {
                 // reduce the stock of album
@@ -35,7 +35,7 @@ namespace KpopZtation_GroupB.Handler
             
         }
 
-        public static List<Cart> GetAllCartByCustomerId(int customerId)
+        public static List<object> GetAllCartByCustomerId(int customerId)
         {
             return CartRepository.GetAllCartByCustomerId(customerId);
         }
