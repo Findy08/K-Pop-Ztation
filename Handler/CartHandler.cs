@@ -1,4 +1,5 @@
-﻿using KpopZtation_GroupB.Model;
+﻿using KpopZtation_GroupB.Factory;
+using KpopZtation_GroupB.Model;
 using KpopZtation_GroupB.Repository;
 using System;
 using System.Collections.Generic;
@@ -11,19 +12,24 @@ namespace KpopZtation_GroupB.Handler
     {
         public static bool CheckOut(int customerId)
         {
+            Customer customer = CustomerHandler.GetCustomerById(customerId);
             // hapus semua cart customer ini
             List<Cart> cart = CartRepository.GetAllCartByCustomerIdPure(customerId);
             if(cart.Count > 0)
             {
-                // reduce the stock of album
+                List<TransactionDetail> td = new List<TransactionDetail>();
                 foreach(Cart c in cart)
                 {
-                    AlbumRepository.UpdateAlbumStock(c.AlbumID, c.Qty);
+                    // ubah jadi transaction detail
+                    TransactionDetail temp = new TransactionDetail();
+                    temp.AlbumID = c.AlbumID;
+                    temp.Qty = c.Qty;
+
+                    td.Append(temp);
                 }
+                TransactionHeader transaction = TransactionHeaderFactory.CreateTransactionHeader(DateTime.Now, customer, td);
                 // insert to transaction history
-                // search customer by id
-                Customer cust = CustomerRepository.GetCustomerById(customerId);
-                TransactionRepository.CreateTransaction(cust, cart);
+                TransactionHandler.InsertTransaction(transaction);
                 // delete all cart from this customer
                 CartRepository.RemoveAllCartByCustomer(cart);
                 return true;

@@ -10,29 +10,19 @@ namespace KpopZtation_GroupB.Repository
     public class TransactionRepository
     {
         private static KpopZtationDatabaseEntities db = DatabaseSingleton.GetInstance();
-        // data
-        // transaction header
-        // transactionId int, transactionDate date, CustomerID int
-        // transaction detail
-        // transactionId int, albumId int, qty int
+        
 
         // add data
-        public static void CreateTransaction(Customer cust, List<Cart> carts)
+        public static bool CreateTransaction(TransactionHeader transaction)
         {
-            // create transaction detail
-            List<TransactionDetail> tdList = new List<TransactionDetail>();
-            foreach(Cart cart in carts)
+            
+            if(transaction != null)
             {
-                TransactionDetail td = TransactionDetailFactory.CreateTransactionDetail(cart);
-                tdList.Add(td);
-                /*db.TransactionDetails.Add(td);
-                db.SaveChanges();*/
+                db.TransactionHeaders.Add(transaction);
+                db.SaveChanges();
+                return true;
             }
-            // create transaction header
-            TransactionHeader th = TransactionHeaderFactory.CreateTransactionHeader(DateTime.Now, cust, tdList);
-            // insert to db
-            db.TransactionHeaders.Add(th);
-            db.SaveChanges();
+            return false;
             
         }
         // show data by customer
