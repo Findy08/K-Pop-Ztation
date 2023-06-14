@@ -21,6 +21,6 @@
         <br />
         <asp:Label ID="errorMsg" runat="server" Text=""></asp:Label>
         <br />
-        <asp:Button ID="updatetAlbumBtn" runat="server" Text="Update Album" OnClick="updatetAlbumBtn_Click"/>
+        <asp:Button ID="updateAlbumBtn" runat="server" Text="Update Album" OnClick="updateAlbumBtn_Click"/>
     </div>
 </asp:Content>

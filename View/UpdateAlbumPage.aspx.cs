@@ -1,4 +1,5 @@
-﻿using KpopZtation_GroupB.Model;
+﻿using KpopZtation_GroupB.Controller;
+using KpopZtation_GroupB.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace KpopZtation_GroupB.View
         {
             if (!IsPostBack)
             {
-                if (Session["customer"] != null)
+                /*if (Session["customer"] != null)
                 {
                     Customer c = (Customer)Session["customer"];
                     // cuma bisa diakses admin
@@ -22,12 +23,50 @@ namespace KpopZtation_GroupB.View
                     {
                         Response.Redirect("~/View/ErrorPage.aspx");
                     }
-                }
+                }*/
+                int id = int.Parse(Request["ID"].ToString());
+                Album album = AlbumController.GetAlbumById(id);
+                nameTb.Text = album.AlbumName;
+                descriptionTb.Text = album.AlbumDescription;
+                priceTb.Text = album.AlbumPrice.ToString();
+                stockTb.Text = album.AlbumStock.ToString();
             }
         }
 
-        protected void updatetAlbumBtn_Click(object sender, EventArgs e)
+        protected void updateAlbumBtn_Click(object sender, EventArgs e)
         {
+            int albumId = int.Parse(Request["ID"].ToString());
+            String name = nameTb.Text;
+            String desc = descriptionTb.Text;
+            String priceText = priceTb.Text;
+            String stockText = stockTb.Text;
+
+            int price = 0, stock = 0;
+            if (!priceText.Equals("")) price = int.Parse(priceText);
+            if (!stockText.Equals("")) stock = int.Parse(stockText);
+
+            String imgPath = "";
+            int imgSize = 0;
+            String imgExt = "";
+            String response = "";
+            if (imageUpload.HasFile)
+            {
+                imgPath = Server.MapPath("~/Assets/Albums/") + imageUpload.FileName;
+                imgSize = imageUpload.PostedFile.ContentLength;
+                imgExt = System.IO.Path.GetExtension(imageUpload.FileName);
+            }
+            response = AlbumController.validateAlbum(name, desc, price, stock, imgPath, imageUpload.HasFile, imgSize, imgExt);
+
+            errorMsg.Text = response;
+
+
+            if (response.Equals(""))
+            {
+                imageUpload.SaveAs(imgPath);
+                AlbumController.doUpdateAlbum(albumId, name, desc, price, stock, "~/Assets/Albums/" + imageUpload.FileName);
+                Album album = AlbumController.GetAlbumById(albumId);
+                Response.Redirect("~/View/ArtistDetailPage.aspx?ID=" + album.ArtistID);
+            }
 
         }
     }

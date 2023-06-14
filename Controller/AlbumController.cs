@@ -66,9 +66,9 @@ namespace KpopZtation_GroupB.Controller
             AlbumHandler.CreateAlbum(artist, name, desc, price, stock, image);
         }
 
-        public static bool doUpdateAlbum()
+        public static void doUpdateAlbum(int albumId, String name, String desc, int price, int stock, String image)
         {
-            return true;
+            AlbumHandler.UpdateAlbum(albumId, name, desc, price, stock, image);
         }
 
         public static List<Album> GetAlbumByArtistId(int artistId)

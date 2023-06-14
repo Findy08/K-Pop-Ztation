@@ -15,7 +15,7 @@ namespace KpopZtation_GroupB.View
         {
             if (!IsPostBack)
             {
-                if (Session["customer"] != null)
+                /*if (Session["customer"] != null)
                 {
                     Customer c = (Customer)Session["customer"];
                     // cuma bisa diakses admin
@@ -23,7 +23,7 @@ namespace KpopZtation_GroupB.View
                     {
                         Response.Redirect("~/View/ErrorPage.aspx");
                     }
-                }
+                }*/
             }
         }
 

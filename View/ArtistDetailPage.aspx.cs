@@ -35,7 +35,7 @@ namespace KpopZtation_GroupB.View
             int id = int.Parse(row.Cells[0].Text);
             AlbumController.RemoveAlbum(id);
             int artistId = int.Parse(Request["ID"].ToString());
-            Response.Redirect("~/View/InsertAlbumPage.aspx?ID=" + artistId);
+            Response.Redirect("~/View/ArtistDetailPage.aspx?ID=" + artistId);
         }
 
         protected void gvAlbum_RowEditing(object sender, GridViewEditEventArgs e)
