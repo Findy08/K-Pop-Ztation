@@ -34,9 +34,16 @@ namespace KpopZtation_GroupB.Repository
         
         // show data by customer
         // transaction id, transaction date, customer name, album picture, album name, album qty, album price
-        public List<TransactionHeader> GetTransactionByCustomer(int customerId)
+        public static List<object> GetTransactionByCustomer(int customerId)
         {
-            return (from th in db.TransactionHeaders where th.CustomerID == customerId select th).ToList();
+            var result = (from th in db.TransactionHeaders
+                          join td in db.TransactionDetails on th.TransactionID equals td.TransactionID
+                          join c in db.Customers on th.CustomerID equals c.CustomerID
+                          join al in db.Albums on td.AlbumID equals al.AlbumID
+                          where th.CustomerID == customerId 
+                          select new { th.TransactionID, th.TransactionDate, c.CustomerName, al.AlbumImage, al.AlbumName, td.Qty, al.AlbumPrice}).ToList();
+            return result.Cast<object>().ToList();
+
         }
     }
 }

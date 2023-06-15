@@ -9,6 +9,9 @@ namespace KpopZtation_GroupB.Handler
 {
     public class TransactionHandler
     {
-        
+        public static List<object> GetTransactionByCustomer(int customerId)
+        {
+            return TransactionRepository.GetTransactionByCustomer(customerId);
+        }
     }
 }
