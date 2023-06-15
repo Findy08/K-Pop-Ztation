@@ -102,8 +102,8 @@
     <Content Include="Assets\Artists\638059450808002463.jfif" />
     <Content Include="Model\KpopZtationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>KpopZtationModel.Context.cs</LastGenOutput>
       <DependentUpon>KpopZtationModel.edmx</DependentUpon>
+      <LastGenOutput>KpopZtationModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\KpopZtationModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -136,7 +136,7 @@
     <Compile Include="Factory\ArtistFactory.cs" />
     <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\CustomerFactory.cs" />
-    <Compile Include="Factory\TransactionHeaderFactory.cs" />
+    <Compile Include="Factory\TransactionFactory.cs" />
     <Compile Include="Handler\AlbumHandler.cs" />
     <Compile Include="Handler\ArtistHandler.cs" />
     <Compile Include="Handler\CartHandler.cs" />

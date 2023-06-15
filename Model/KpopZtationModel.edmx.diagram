@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6e574fbb7ae34c13b3cb7dd7fe7037b6" Name="Diagram1">
+      <Diagram DiagramId="9003bd6cf0b24a63ba23c0ea080a13a7" Name="Diagram1">
         <EntityTypeShape EntityType="KpopZtationDatabaseModel.Album" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="KpopZtationDatabaseModel.Artist" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="KpopZtationDatabaseModel.Cart" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KpopZtationDatabaseModel.Customer" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KpopZtationDatabaseModel.TransactionHeader" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="KpopZtationDatabaseModel.TransactionDetail" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Album__ArtistID__276EDEB3" ManuallyRouted="false" />
-        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Cart__AlbumID__2B3F6F97" ManuallyRouted="false" />
-        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Transacti__Album__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Cart__CustomerID__2A4B4B5E" ManuallyRouted="false" />
-        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Transacti__Custo__2E1BDC42" ManuallyRouted="false" />
-        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Transacti__Trans__300424B4" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KpopZtationDatabaseModel.TransactionHeader" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Album__ArtistID__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Cart__AlbumID__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Transacti__Album__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Cart__CustomerID__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Transacti__Custo__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="KpopZtationDatabaseModel.FK__Transacti__Trans__619B8048" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

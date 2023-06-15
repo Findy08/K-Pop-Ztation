@@ -25,7 +25,7 @@ namespace KpopZtation_GroupB.View
             errorMsg.Text = CustomerController.validateRegisterCustomer(name, email, gender, address, password);
             if(errorMsg.Text == "")
             {
-                Response.Redirect("~/View/HomePage.aspx");
+                Response.Redirect("~/View/LoginPage.aspx");
             }
             
         }

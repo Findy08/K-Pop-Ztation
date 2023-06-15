@@ -2,6 +2,7 @@
 using KpopZtation_GroupB.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -9,22 +10,28 @@ namespace KpopZtation_GroupB.Repository
 {
     public class TransactionRepository
     {
-        private static KpopZtationDatabaseEntities db = DatabaseSingleton.GetInstance();
+        private static KpopDatabaseEntities db = DatabaseSingleton.GetInstance();
         
 
         // add data
-        public static bool CreateTransaction(TransactionHeader transaction)
+        public static TransactionHeader CreateTransactionHeader(Customer cust)
         {
-            
-            if(transaction != null)
-            {
-                db.TransactionHeaders.Add(transaction);
-                db.SaveChanges();
-                return true;
-            }
-            return false;
-            
+            TransactionHeader th = TransactionFactory.CreateTransactionHeader(cust);
+            db.TransactionHeaders.Add(th);
+            db.SaveChanges();
+            return th;
         }
+
+        public static void CreateTransactionDetail(TransactionHeader th, Album album, int qty)
+        {
+            TransactionDetail td = TransactionFactory.CreateTransactionDetail(th, album, qty);
+            td.TransactionID = th.TransactionID;
+            td.AlbumID = album.AlbumID;
+            db.TransactionDetails.Add(td);
+            db.SaveChanges();
+        }
+
+        
         // show data by customer
         // transaction id, transaction date, customer name, album picture, album name, album qty, album price
         public List<TransactionHeader> GetTransactionByCustomer(int customerId)

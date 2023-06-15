@@ -22,7 +22,7 @@ namespace KpopZtation_GroupB.Model
     
         public int TransactionID { get; set; }
         public System.DateTime TransactionDate { get; set; }
-        public Nullable<int> CustomerID { get; set; }
+        public int CustomerID { get; set; }
     
         public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

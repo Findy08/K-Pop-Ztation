@@ -9,7 +9,7 @@ namespace KpopZtation_GroupB.Repository
 {
     public class CartRepository
     {
-        private static KpopZtationDatabaseEntities db = DatabaseSingleton.GetInstance();
+        private static KpopDatabaseEntities db = DatabaseSingleton.GetInstance();
         
         // show cart
         public static List<object> GetAllCartByCustomerId(int customerId)
@@ -74,7 +74,7 @@ namespace KpopZtation_GroupB.Repository
         {
             if(item != null)
             {
-                item.Qty = item.Qty + newQty;
+                item.Qty = newQty;
                 db.SaveChanges();
                 return true;
             }

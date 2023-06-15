@@ -15,21 +15,20 @@ namespace KpopZtation_GroupB.Handler
             Customer customer = CustomerHandler.GetCustomerById(customerId);
             // hapus semua cart customer ini
             List<Cart> cart = CartRepository.GetAllCartByCustomerIdPure(customerId);
-            if(cart.Count > 0)
+
+            TransactionHeader thLast = TransactionRepository.CreateTransactionHeader(customer);
+            // TransactionHeader thLast = TransactionRepository.GetLatestTransactionByCustomer(customerId);
+            
+            if(thLast != null && cart.Count > 0)
             {
-                List<TransactionDetail> td = new List<TransactionDetail>();
                 foreach(Cart c in cart)
                 {
-                    // ubah jadi transaction detail
-                    TransactionDetail temp = new TransactionDetail();
-                    temp.AlbumID = c.AlbumID;
-                    temp.Qty = c.Qty;
-
-                    td.Append(temp);
+                    Console.WriteLine("test");
+                    TransactionRepository.CreateTransactionDetail(thLast, c.Album, c.Qty);
+                    AlbumRepository.UpdateAlbumStock(c.AlbumID, c.Qty);
                 }
-                TransactionHeader transaction = TransactionHeaderFactory.CreateTransactionHeader(DateTime.Now, customer, td);
-                // insert to transaction history
-                TransactionHandler.InsertTransaction(transaction);
+
+                
                 // delete all cart from this customer
                 CartRepository.RemoveAllCartByCustomer(cart);
                 return true;

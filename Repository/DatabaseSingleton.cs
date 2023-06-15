@@ -9,17 +9,17 @@ namespace KpopZtation_GroupB.Repository
     
     public class DatabaseSingleton
     {
-        private static KpopZtationDatabaseEntities db = null;
+        private static KpopDatabaseEntities db = null;
         private DatabaseSingleton()
         {
 
         }
 
-        public static KpopZtationDatabaseEntities GetInstance()
+        public static KpopDatabaseEntities GetInstance()
         {
             if(db == null)
             {
-                db = new KpopZtationDatabaseEntities();
+                db = new KpopDatabaseEntities();
             }
             return db;
         }

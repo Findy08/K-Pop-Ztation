@@ -13,10 +13,10 @@ namespace KpopZtation_GroupB.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class KpopZtationDatabaseEntities : DbContext
+    public partial class KpopDatabaseEntities : DbContext
     {
-        public KpopZtationDatabaseEntities()
-            : base("name=KpopZtationDatabaseEntities")
+        public KpopDatabaseEntities()
+            : base("name=KpopDatabaseEntities")
         {
         }
     
@@ -29,7 +29,7 @@ namespace KpopZtation_GroupB.Model
         public virtual DbSet<Artist> Artists { get; set; }
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<TransactionHeader> TransactionHeaders { get; set; }
         public virtual DbSet<TransactionDetail> TransactionDetails { get; set; }
+        public virtual DbSet<TransactionHeader> TransactionHeaders { get; set; }
     }
 }

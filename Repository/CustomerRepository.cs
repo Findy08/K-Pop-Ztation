@@ -9,7 +9,7 @@ namespace KpopZtation_GroupB.Repository
 {
     public class CustomerRepository
     {
-        private static KpopZtationDatabaseEntities db = DatabaseSingleton.GetInstance();
+        private static KpopDatabaseEntities db = DatabaseSingleton.GetInstance();
         public static void CreateCustomer(String name, String email, String gender, String address, String password, String role)
         {
             Customer c = CustomerFactory.CreateCustomer(name, email, password, gender, address, role);

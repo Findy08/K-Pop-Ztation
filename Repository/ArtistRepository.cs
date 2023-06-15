@@ -9,7 +9,7 @@ namespace KpopZtation_GroupB.Repository
 {
     public class ArtistRepository
     {
-        private static KpopZtationDatabaseEntities db = DatabaseSingleton.GetInstance();
+        private static KpopDatabaseEntities db = DatabaseSingleton.GetInstance();
         public static List<Artist> GetAllArtist()
         {
             return (from a in db.Artists select a).ToList();

@@ -22,7 +22,7 @@ namespace KpopZtation_GroupB.Model
         }
     
         public int AlbumID { get; set; }
-        public Nullable<int> ArtistID { get; set; }
+        public int ArtistID { get; set; }
         public string AlbumName { get; set; }
         public string AlbumImage { get; set; }
         public int AlbumPrice { get; set; }

@@ -1,5 +1,6 @@
 ﻿using KpopZtation_GroupB.Controller;
 using KpopZtation_GroupB.Model;
+using KpopZtation_GroupB.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
