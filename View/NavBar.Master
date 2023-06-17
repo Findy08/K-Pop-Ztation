@@ -59,6 +59,17 @@
             height: auto;
         }
 
+        .role {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            color: white;
+        }
+
+        .role-container {
+            background-color: #4D4B46;
+            padding: 5px;
+        }
         
     </style>
 </head>
@@ -74,6 +85,9 @@
             <asp:LinkButton ID="updateProfileLink" runat="server" CssClass="linkBtn" OnClick="updateProfileLink_Click">Update Profile</asp:LinkButton>
             <asp:LinkButton ID="logoutpageLink" runat="server" CssClass="linkBtn" OnClick="logoutpageLink_Click">Logout</asp:LinkButton>
         </nav>
+        <div class="role-container">
+            <p class="role">You are logged in as a Guest</p>
+        </div>
         <div>
             <asp:ContentPlaceHolder ID="contentBody" runat="server">
                 
@@ -81,7 +95,7 @@
         </div>
         <footer>
             <h5>All rights reserved - 2023</h5>
-            <h6>Findy, Gilbert, Juan, Natasha</h6>
+            <h6>Natasha, Juan, Findy, Gilbert</h6>
         </footer>
     </form>
 </body>

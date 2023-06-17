@@ -45,5 +45,10 @@ namespace KpopZtation_GroupB.Repository
             return result.Cast<object>().ToList();
 
         }
+
+        public static List<TransactionHeader> GetAllTransaction()
+        {
+            return db.TransactionHeaders.ToList();
+        }
     }
 }
