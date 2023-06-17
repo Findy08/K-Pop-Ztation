@@ -1315,9 +1315,6 @@
       <DependentUpon>KpopZtationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report\KPopZtationReport.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Report\KPopZtationReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
