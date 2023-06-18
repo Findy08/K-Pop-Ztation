@@ -1,4 +1,5 @@
 ﻿using KpopZtation_GroupB.Controller;
+using KpopZtation_GroupB.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,12 @@ namespace KpopZtation_GroupB.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Customer cust = (Customer)Session["customer"];
 
+            if (cust != null || Request.Cookies["customer_cookie"] != null)
+            {
+                Response.Redirect("~/View/HomePage.aspx");
+            }
         }
 
         protected void registerBtn_Click(object sender, EventArgs e)

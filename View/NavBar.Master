@@ -76,17 +76,34 @@
 <body>
     <form id="form1" runat="server">
         <nav>
+            <% if (role == "A")
+                { %>
             <h1 class="logo">KpopZtation</h1>
             <asp:LinkButton ID="homepageLink" runat="server" CssClass="linkBtn" OnClick="homepageLink_Click">Home</asp:LinkButton>
-            <asp:LinkButton ID="loginpageLink" runat="server" CssClass="linkBtn" OnClick="loginpageLink_Click">Login</asp:LinkButton>
-            <asp:LinkButton ID="registerpageLink" runat="server" CssClass="linkBtn" OnClick="registerpageLink_Click">Register</asp:LinkButton>
-            <asp:LinkButton ID="cartLink" runat="server" CssClass="linkBtn" OnClick="cartLink_Click">Cart</asp:LinkButton>
             <asp:LinkButton ID="transactionLink" runat="server" CssClass="linkBtn" OnClick="transactionLink_Click">Transaction</asp:LinkButton>
             <asp:LinkButton ID="updateProfileLink" runat="server" CssClass="linkBtn" OnClick="updateProfileLink_Click">Update Profile</asp:LinkButton>
-            <asp:LinkButton ID="logoutpageLink" runat="server" CssClass="linkBtn" OnClick="logoutpageLink_Click">Logout</asp:LinkButton>
+            <asp:LinkButton ID="logoutpageLink1" runat="server" CssClass="linkBtn" OnClick="logoutpageLink_Click">Logout</asp:LinkButton>
+            <%}
+                else if (role == "C")
+                {%>
+            <asp:LinkButton ID="homepageLink2" runat="server" CssClass="linkBtn" OnClick="homepageLink_Click">Home</asp:LinkButton>
+            <asp:LinkButton ID="cartLink" runat="server" CssClass="linkBtn" OnClick="cartLink_Click">Cart</asp:LinkButton>
+            <asp:LinkButton ID="transactionLink2" runat="server" CssClass="linkBtn" OnClick="transactionLink2_Click">Transaction</asp:LinkButton>
+            <asp:LinkButton ID="updateProfileLink2" runat="server" CssClass="linkBtn" OnClick="updateProfileLink_Click">Update Profile</asp:LinkButton>
+            <asp:LinkButton ID="logoutpageLink2" runat="server" CssClass="linkBtn" OnClick="logoutpageLink_Click">Logout</asp:LinkButton>
+            
+            <%}
+                else
+                { %>
+            <asp:LinkButton ID="homepageLink3" runat="server" CssClass="linkBtn" OnClick="homepageLink_Click">Home</asp:LinkButton>
+            <asp:LinkButton ID="loginpageLink" runat="server" CssClass="linkBtn" OnClick="loginpageLink_Click">Login</asp:LinkButton>
+            <asp:LinkButton ID="registerpageLink" runat="server" CssClass="linkBtn" OnClick="registerpageLink_Click">Register</asp:LinkButton>
+            <%} %>
         </nav>
         <div class="role-container">
-            <p class="role">You are logged in as a Guest</p>
+            <p class="role">You are logged in as a 
+                <asp:Label ID="currentRole" runat="server" Text=""></asp:Label>
+            </p>
         </div>
         <div>
             <asp:ContentPlaceHolder ID="contentBody" runat="server">

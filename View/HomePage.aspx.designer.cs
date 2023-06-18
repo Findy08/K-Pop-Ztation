@@ -33,6 +33,15 @@ namespace KpopZtation_GroupB.View
         protected global::System.Web.UI.WebControls.Label userNameLb;
 
         /// <summary>
+        /// insertArtistLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton insertArtistLink;
+
+        /// <summary>
         /// gvArtist control.
         /// </summary>
         /// <remarks>
@@ -40,5 +49,14 @@ namespace KpopZtation_GroupB.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvArtist;
+
+        /// <summary>
+        /// gvArtist2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvArtist2;
     }
 }

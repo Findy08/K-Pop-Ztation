@@ -11,10 +11,18 @@ namespace KpopZtation_GroupB.View
 {
     public partial class ArtistDetailPage : System.Web.UI.Page
     {
+        public String role = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                Customer cust = (Customer)Session["customer"];
+
+                if (cust != null)
+                {
+                    role = cust.CustomerRole;
+                }
+
                 int id = int.Parse(Request["ID"].ToString());
                 Artist artist = ArtistController.GetArtistById(id);
                 nameLb.Text = artist.ArtistName;
@@ -26,6 +34,8 @@ namespace KpopZtation_GroupB.View
 
                 gvAlbum.DataSource = AlbumController.GetAlbumByArtistId(id);
                 gvAlbum.DataBind();
+                gvAlbum2.DataSource = AlbumController.GetAlbumByArtistId(id);
+                gvAlbum2.DataBind();
             }
         }
 
@@ -47,6 +57,7 @@ namespace KpopZtation_GroupB.View
 
         protected void gvAlbum_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             int index = gvAlbum.SelectedIndex;
             int id = int.Parse(gvAlbum.Rows[index].Cells[0].Text);
             Response.Redirect("~/View/AlbumDetailPage.aspx?ID=" + id);
@@ -56,6 +67,13 @@ namespace KpopZtation_GroupB.View
         {
             int artistId = int.Parse(Request["ID"].ToString());
             Response.Redirect("~/View/InsertAlbumPage.aspx?ID="+artistId);
+        }
+
+        protected void gvAlbum2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = gvAlbum2.SelectedIndex;
+            int id = int.Parse(gvAlbum2.Rows[index].Cells[0].Text);
+            Response.Redirect("~/View/AlbumDetailPage.aspx?ID=" + id);
         }
     }
 }

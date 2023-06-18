@@ -33,15 +33,6 @@ namespace KpopZtation_GroupB.View
         protected global::System.Web.UI.WebControls.Label nameLb;
 
         /// <summary>
-        /// insertAlbumLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton insertAlbumLink;
-
-        /// <summary>
         /// artistImg control.
         /// </summary>
         /// <remarks>
@@ -51,6 +42,15 @@ namespace KpopZtation_GroupB.View
         protected global::System.Web.UI.WebControls.Image artistImg;
 
         /// <summary>
+        /// insertAlbumLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton insertAlbumLink;
+
+        /// <summary>
         /// gvAlbum control.
         /// </summary>
         /// <remarks>
@@ -58,5 +58,14 @@ namespace KpopZtation_GroupB.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvAlbum;
+
+        /// <summary>
+        /// gvAlbum2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvAlbum2;
     }
 }

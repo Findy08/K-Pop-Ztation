@@ -42,33 +42,6 @@ namespace KpopZtation_GroupB.View
         protected global::System.Web.UI.WebControls.LinkButton homepageLink;
 
         /// <summary>
-        /// loginpageLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton loginpageLink;
-
-        /// <summary>
-        /// registerpageLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton registerpageLink;
-
-        /// <summary>
-        /// cartLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton cartLink;
-
-        /// <summary>
         /// transactionLink control.
         /// </summary>
         /// <remarks>
@@ -87,13 +60,94 @@ namespace KpopZtation_GroupB.View
         protected global::System.Web.UI.WebControls.LinkButton updateProfileLink;
 
         /// <summary>
-        /// logoutpageLink control.
+        /// logoutpageLink1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton logoutpageLink;
+        protected global::System.Web.UI.WebControls.LinkButton logoutpageLink1;
+
+        /// <summary>
+        /// homepageLink2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton homepageLink2;
+
+        /// <summary>
+        /// cartLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton cartLink;
+
+        /// <summary>
+        /// transactionLink2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton transactionLink2;
+
+        /// <summary>
+        /// updateProfileLink2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton updateProfileLink2;
+
+        /// <summary>
+        /// logoutpageLink2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton logoutpageLink2;
+
+        /// <summary>
+        /// homepageLink3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton homepageLink3;
+
+        /// <summary>
+        /// loginpageLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton loginpageLink;
+
+        /// <summary>
+        /// registerpageLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton registerpageLink;
+
+        /// <summary>
+        /// currentRole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label currentRole;
 
         /// <summary>
         /// contentBody control.

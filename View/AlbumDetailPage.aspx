@@ -23,6 +23,8 @@
         <asp:Label ID="stockLb" runat="server" Text="Label"></asp:Label>
         <br />
 
+        <% if (role == "C")
+            { %>
         <h1 class="title">Add to cart</h1>
         <asp:Label ID="Label9" runat="server" Text="Label">Quantity: </asp:Label>
         <asp:TextBox ID="qtyTb" runat="server"></asp:TextBox>
@@ -30,7 +32,7 @@
         <asp:Label ID="errorMsg" runat="server" Text=""></asp:Label>
         <br />
         <asp:Button ID="addCartBtn" runat="server" Text="Add to Cart" OnClick="addCartBtn_Click"/>
-
+        <% } %>
     </div>
 
 </asp:Content>

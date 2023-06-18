@@ -11,32 +11,35 @@ namespace KpopZtation_GroupB.View
 {
     public partial class HomePage : System.Web.UI.Page
     {
+        public String role = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if(!IsPostBack)
             {
-                /*guest bisa akses, jd dicomment*/
-                /*if (Session["customer"] == null && Request.Cookies["customer_cookie"] == null)
+                Customer cust;
+                if(Session["customer"] == null)
                 {
-                    Response.Redirect("~/View/LoginPage.aspx");
-                }
-                else
-                {*/
-                    Customer cust;
-                    if(Session["customer"] == null)
+                    if(Request.Cookies["customer_cookie"] != null)
                     {
                         int id = int.Parse(Request.Cookies["customer_cookie"].Value);
                         cust = CustomerController.GetCustomerById(id);
                         Session["customer"] = cust;
-                    }
-                    else
-                    {
-                        cust = (Customer)Session["customer"];
-                    }
+                        userNameLb.Text = cust.CustomerName;
+                        role = cust.CustomerRole;
+                    }   
+                }
+                else
+                {
+                    cust = (Customer)Session["customer"];
                     userNameLb.Text = cust.CustomerName;
-                /*}*/
+                    role = cust.CustomerRole;
+                }
                 gvArtist.DataSource = ArtistController.GetAllArtist();
                 gvArtist.DataBind();
+
+                gvArtist2.DataSource = ArtistController.GetAllArtist();
+                gvArtist2.DataBind();
             }
         }
 
@@ -59,6 +62,20 @@ namespace KpopZtation_GroupB.View
         {
             int index = gvArtist.SelectedIndex;
             int id = int.Parse(gvArtist.Rows[index].Cells[0].Text);
+            Response.Redirect("~/View/ArtistDetailPage.aspx?ID=" + id);
+
+            
+        }
+
+        protected void insertArtistLink_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/InsertArtistPage.aspx");
+        }
+
+        protected void gvArtist2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = gvArtist2.SelectedIndex;
+            int id = int.Parse(gvArtist2.Rows[index].Cells[0].Text);
             Response.Redirect("~/View/ArtistDetailPage.aspx?ID=" + id);
         }
     }

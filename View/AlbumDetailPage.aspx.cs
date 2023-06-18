@@ -11,10 +11,18 @@ namespace KpopZtation_GroupB.View
 {
     public partial class AlbumDetailPage : System.Web.UI.Page
     {
+        public String role = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
+                Customer cust = (Customer)Session["customer"];
+
+                if (cust != null)
+                {
+                    role = cust.CustomerRole;
+                }
+
                 int albumId = int.Parse(Request["ID"].ToString());
                 Album album = AlbumController.GetAlbumById(albumId);
                 nameLb.Text = album.AlbumName;
