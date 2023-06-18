@@ -76,9 +76,9 @@
 <body>
     <form id="form1" runat="server">
         <nav>
-            <% if (role == "A")
-                { %>
             <h1 class="logo">KpopZtation</h1>
+            <% if (role == "A")
+                { %> 
             <asp:LinkButton ID="homepageLink" runat="server" CssClass="linkBtn" OnClick="homepageLink_Click">Home</asp:LinkButton>
             <asp:LinkButton ID="transactionLink" runat="server" CssClass="linkBtn" OnClick="transactionLink_Click">Transaction</asp:LinkButton>
             <asp:LinkButton ID="updateProfileLink" runat="server" CssClass="linkBtn" OnClick="updateProfileLink_Click">Update Profile</asp:LinkButton>
