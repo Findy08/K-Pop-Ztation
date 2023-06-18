@@ -13,7 +13,12 @@ namespace KpopZtation_GroupB.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Customer cust = (Customer)Session["customer"];
 
+            if (cust == null && Request.Cookies["customer_cookie"] == null)
+            {
+                Response.Redirect("~/View/ErrorPage.aspx");
+            }
         }
 
         protected void updateProfileBtn_Click(object sender, EventArgs e)
