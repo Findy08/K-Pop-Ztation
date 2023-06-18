@@ -60,8 +60,9 @@ namespace KpopZtation_GroupB.View
             {
                 imageUpload.SaveAs(imgPath);
                 ArtistController.doUpdateArtist(id, name, "~/Assets/Artists/" + imageUpload.FileName);
+                Response.Redirect("~/View/HomePage.aspx");
             }
-            Response.Redirect("~/View/HomePage.aspx");
+            
         }
     }
 }

@@ -74,6 +74,7 @@ namespace KpopZtation_GroupB.View
                 }
                 
                 CartController.AddItemToCart(cust, album, qty);
+                Page.Response.Redirect(Page.Request.Url.ToString(), true);
             }
         }
     }
